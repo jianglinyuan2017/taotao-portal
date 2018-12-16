@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.taotao.service.ContentService;
+import com.taotao.facade.service.ContentService;
 
 @Controller
 public class pageController {
@@ -16,7 +16,7 @@ public class pageController {
 	
 	@RequestMapping("/index")
 	public String getIndex(Model model) {
-		String contentList = contentService.getContentList();
+		String contentList = contentService.getPageContentList();
 		model.addAttribute("ad1", contentList);
 		return "index";
 	}
